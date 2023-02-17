@@ -1,4 +1,5 @@
 import terser from '@rollup/plugin-terser';
+import babel from '@rollup/plugin-babel';
 
 export default [{
   input: 'src/iframeResizer.js',
@@ -14,12 +15,12 @@ export default [{
     file: 'js/iframeResizer.contentWindow.min.js',
     sourcemap: true,
   }],
-  plugins: [terser()],
+  plugins: [babel(), terser()],
 }, {
   input: 'src/iframeResizer.js',
   output: [{
     file: 'js/iframeResizer.min.js',
     sourcemap: true,
   }],
-  plugins: [terser()],
+  plugins: [babel(), terser()],
 }];
