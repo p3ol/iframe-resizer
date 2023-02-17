@@ -1,11 +1,12 @@
 // Karma configuration
 // Generated on Tue Aug 25 2015 12:11:48 GMT+0100 (BST)
 
+const test = require('./spec/karma-jasmine-jquery/lib');
+
 module.exports = function (config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine-jquery', 'jasmine', 'requirejs'],
@@ -55,7 +56,8 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['logcapture', 'progress', 'verbose-summary', 'coverage'],
+    // reporters: ['logcapture', 'progress', 'verbose-summary', 'coverage'],
+    plugins: ['karma-coverage', 'karma-jasmine', 'karma-requirejs', 'karma-chrome-launcher', test],
 
     // web server port
     port: 9876,
@@ -80,5 +82,6 @@ module.exports = function (config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
+
   });
 };

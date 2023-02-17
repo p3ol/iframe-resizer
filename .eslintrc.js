@@ -3,7 +3,7 @@ const WARNING = 1;
 
 module.exports = {
   extends: '@poool/eslint-config',
-  ignorePatterns: ['js/*'],
+  ignorePatterns: ['js/*', 'spec/*'],
   rules: {
     'valid-typeof': [WARNING, { requireStringLiterals: false }],
     'import/no-webpack-loader-syntax': OFF,
