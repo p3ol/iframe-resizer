@@ -1432,30 +1432,10 @@
       return iFrames
     }
   }
-
-  function createJQueryPublicMethod($) {
-    if (!$.fn) {
-      info('', 'Unable to bind to jQuery, it is not fully loaded.')
-    } else if (!$.fn.iFrameResize) {
-      $.fn.iFrameResize = function $iFrameResizeF(options) {
-        function init(index, element) {
-          setupIFrame(element, options)
-        }
-
-        return this.filter('iframe').each(init).end()
-      }
-    }
-  }
-
-  if (window.jQuery !== undefined) {
-    createJQueryPublicMethod(window.jQuery)
-  }
-
   if (typeof define === 'function' && define.amd) {
     define([], factory)
   } else if (typeof module === 'object' && typeof module.exports === 'object') {
     // Node for browserfy
     module.exports = factory()
   }
-  window.iFrameResize = window.iFrameResize || factory()
 })()
