@@ -30,25 +30,26 @@ module.exports = function (config) {
       { pattern: 'example/*.html', included: false },
       { pattern: 'spec/*Spec.js', included: false },
       { pattern: 'spec/resources/*', included: false },
-      { pattern: 'spec/javascripts/fixtures/*.html', included: false }
+      { pattern: 'spec/javascripts/fixtures/*.html', included: false },
     ],
 
     // list of files to exclude
     exclude: [],
 
     // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    // available preprocessors:
+    // https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/*.js': ['coverage']
+      'src/*.js': ['coverage'],
     },
 
     coverageReporter: {
       type: 'html',
-      dir: 'coverage/'
+      dir: 'coverage/',
     },
 
     client: {
-      captureConsole: true
+      captureConsole: true,
     },
 
     // test results reporter to use
@@ -63,18 +64,21 @@ module.exports = function (config) {
     colors: true,
 
     // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR ||
+    // config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
-    // enable / disable watching file and executing tests whenever any file changes
+    // enable / disable watching file and
+    // executing tests whenever any file changes
     autoWatch: true,
 
     // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'], // 'Chrome', 'Firefox', 'Safari', 'PhantomJS'
+    // available browser launchers:
+    // https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['Chrome'], // 'Chrome', 'Firefox', 'Safari', 'PhantomJS'
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
-  })
-}
+    singleRun: true,
+  });
+};
