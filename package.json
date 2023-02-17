@@ -12,11 +12,11 @@
     }
   ],
   "scripts": {
-    "build": "npm install && grunt",
+    "build": "rollup -c",
     "eslint": "eslint *.js src/* --color",
     "eslint:fix": "npm run eslint -- --fix",
     "test-watch": "grunt test-watch",
-    "test": "grunt travis"
+    "test": "./node_modules/.bin/karma start karma.conf.js --browsers Chrome"
   },
   "description": "Keep same and cross domain iFrames sized to their content with support for window/content resizing, and multiple iFrames.",
   "repository": {
@@ -29,6 +29,8 @@
     "url": "https://github.com/davidjbradshaw/iframe-resizer/blob/master/FUNDING.md"
   },
   "devDependencies": {
+    "@poool/eslint-config": "2.0.2",
+    "@rollup/plugin-terser": "0.4.0",
     "cosmiconfig": "^8.0.0",
     "cryptiles": "^4.1.3",
     "deep-extend": "^0.6.0",
@@ -103,6 +105,7 @@
     "phantomjs": "^2.1.7",
     "prettier": "^2.8.3",
     "requirejs": "^2.3.6",
+    "rollup": "3.16.0",
     "time-grunt": "^2.0.0"
   },
   "main": "index.js",
